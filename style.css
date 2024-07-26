@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Playwrite+CU&display=swap');
+:root { /*o código com variáveis é muito mais fácil de entender e manter.*/
+    --branco-principal: #FFFFFF;
+    --cinza-secundario: #C0C0C0;
+    --azul-botao: #167BF7;
+    --cor-de-fundo: #00030C;
+    --fonte-principal: "Inter", sans-serif;
+
+}
+
+* { /*SELETOR UNIVERSAL, seleciona todos os elementos HTML e aplica o estilo que definimos. Ele não vai tão a fundo quanto o "root". 
+    Ele    pega apenas os elementos, mas não define todo o arquivo CSS como o "root".*/
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    background-color: var(--cor-de-fundo);
+    color: var(--branco-principal);
+    box-sizing: border-box;
+}
+
+/*Se a imagem tiver sentido para a pessoa usuária, use a tag img e adicione um texto alternativo. Se é uma imagem apenas decorativa, use o background-image.*/
+
+.principal {
+    background-image: url("assets/Background.png");
+    background-repeat: no-repeat; /*Controla a repetição do fundo. Como não queremos a repetição, vamos colocar o valor no-repeat.*/
+    background-size: contain; /*alterar o tamanho desse fundo com a propriedade background-size. Queremos o valor contain. Assim, ele vai pegar toda a section e vai preenchê-la.*/
+    align-items: center;
+    
+}
+
+.container { 
+    /*Cada uma das seções ocupa uma tela inteira, que é o que definimos no "container". O elemento dentro do container vai usar 100% dessa altura porque definimos seu height como 100vh.*/
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 50% 50%; /*Essa separação é feita em elementos de bloco, em cada elemento, por isso que colocamos tudo dentro da <div>. Pegamos nossa caixa, colocamos nosso elemento A, colocamos nosso elemento img, colocamos nosso elemento H1 e guardamos, ocupando apenas o espaço dela.*/
+    padding: 0 0 0 3.375rem;
+    
+
+}
+
+.container__titulo {
+    font-family: var(--fonte-principal);
+    font-size: 1.75rem;
+    font-weight: 700;      
+
+}
+
+.container__imagem {
+    padding: 1.375rem 0rem 3.375rem 0rem; 
+}
+
+.container__botao {
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container__botao1 {
+    display: flex;
+    justify-content: center;
+    border: 2px solid var(--azul-botao);
+    border-radius: 8px;
+    padding: 1rem;
+    width: 20rem;
+    background-color: var(--azul-botao);
+    text-decoration: none;
+    font-family: var(--fonte-principal);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+}
+
+.container__botao2 {
+    display: flex;
+    justify-content: center;
+    border: 2px solid var(--branco-principal);
+    border-radius: 8px;
+    padding: 1rem;
+    width: 20rem;
+    text-decoration: none;
+    color: var(--branco-principal);
+    font-family: var(--fonte-principal);
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1rem;
+}
+
+.observacao {
+    width: 23.75rem;
+    text-align: center;
+    color: var(--cinza-secundario);
+    font-family: var(--fonte-principal);
+    font-weight: 400;
+    font-size: 0.75rem;
+    padding: 0.625rem 0rem;
+    
+}
